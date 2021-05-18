@@ -17,26 +17,42 @@
         const name = 'Jon'
         const handle = '@aardvarkjon'
 
-        const nameElement = React.createElement(
+        function NameComponent (props) {
+            return React.createElement(
             'h1',
             null,
-            name
+            props.name
         )
+        }
 
-        const handleElement = React.createElement(
+        function HandleComponent (props) {
+            return React.createElement(
             'h3',
             null,
-            handle
+            props.handle
         )
+        }
+
+        // const nameElement = React.createElement(
+        //     'h1',
+        //     null,
+        //     name
+        // )
+
+        // const handleElement = React.createElement(
+        //     'h3',
+        //     null,
+        //     handle
+        // )
 
         const wrapperElement = React.createElement(
             'div',
             {id: 'container'},
-            nameElement,
-            handleElement
+            React.createElement(NameComponent, {name}),
+            React.createElement(HandleComponent, {handle})
             )
 
-        console.log(nameElement)
+        
 
 
         ReactDOM.render(
