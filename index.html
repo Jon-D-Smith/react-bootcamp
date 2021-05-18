@@ -13,17 +13,34 @@
 
 
     <script>
-        const headerElement = React.createElement(
+
+        const name = 'Jon'
+        const handle = '@aardvarkjon'
+
+        const nameElement = React.createElement(
             'h1',
-            {id: 'header'},
-            'Hello World'
+            null,
+            name
         )
 
-        console.log(headerElement)
+        const handleElement = React.createElement(
+            'h3',
+            null,
+            handle
+        )
+
+        const wrapperElement = React.createElement(
+            'div',
+            {id: 'container'},
+            nameElement,
+            handleElement
+            )
+
+        console.log(nameElement)
 
 
         ReactDOM.render(
-            headerElement,
+            wrapperElement,
             document.getElementById('app')
         )
     </script>
