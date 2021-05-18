@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
+    <title>Practice 2</title>
+</head>
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+    const USER_DATA = {
+        name: 'Jon Smith',
+        img: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80',
+        username: 'aardvarkjon'
+    }
+
+    function Badge(props) {
+        return(
+            <div>
+                <img src={USER_DATA.img} />
+                <h1>Name:{USER_DATA.name} </h1>
+                <h3>Username:{USER_DATA.username}</h3>
+            </div>
+        )
+    }
+
+    ReactDOM.render(
+        <Badge user={USER_DATA}/>,
+        document.getElementById('app')
+    )
+    </script>
+    
+</body>
+</html>
